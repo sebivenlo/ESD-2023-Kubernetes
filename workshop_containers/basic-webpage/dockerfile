@@ -1,0 +1,11 @@
+# Use the official Nginx base image
+FROM nginx:alpine
+
+# Copy your HTML file to the default Nginx document root
+COPY index.html /usr/share/nginx/html/
+
+# Expose port 88 for HTTP traffic
+EXPOSE 88
+
+# Start the Nginx web server when the container starts
+CMD ["nginx", "-g", "daemon off;"]
