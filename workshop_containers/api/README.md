@@ -12,4 +12,4 @@
 
 7: Port-forward this Pod so you can test it within the browser `kubectl port-forward esde-api 3000:3000`
 
-8: Execute `curl http://127.0.0.1:3000` 
+8: Execute `curl http://127.0.0.1:3000` or visit the browser @ `http://127.0.0.1:3000`
