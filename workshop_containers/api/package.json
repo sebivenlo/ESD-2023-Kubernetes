@@ -1,0 +1,15 @@
+{
+  "name": "esde-api",
+  "version": "1.0.0",
+  "description": "An example API for the ESDE Workshop on Minikube",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Timo Mattern, Michiel Hendrix, Daniel Sevov & Patrick van Leipsig",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

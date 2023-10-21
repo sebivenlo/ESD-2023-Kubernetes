@@ -1,6 +1,7 @@
-FROM python:3.7
-COPY . /app
-WORKDIR /app
-RUN pip install --no-cache-dir -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["app.py"]
+FROM node:14
+WORKDIR .
+COPY . ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]

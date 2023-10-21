@@ -4,5 +4,5 @@
 4: Build the Docker-image `docker build -t esde_api .`
 5: Create Pod `kubectl create -f ./esde-api.yaml`
 6: Check if Pod is running `kubectl get pods`
-7: Port-forward this Pod so you can test it within the browser `kubectl port-forward esde-api 5000:5000`
-8: Execute `curl http://127.0.0.1:5000` 
+7: Port-forward this Pod so you can test it within the browser `kubectl port-forward esde-api 3000:3000`
+8: Execute `curl http://127.0.0.1:3000` 
