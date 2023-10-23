@@ -8,7 +8,7 @@ A Kubernetes cluster is a set of nodes that run containerized applications. Thes
 
 A Kubernetes cluster consists of one master node and several worker nodes, which can be either physical computers or virtual machines.
 
-![Kubernetes cluster diagram](images/cluster_diagram.png)
+![Kubernetes cluster diagram](images/cluster_diagram.PNG)
 
 ### Master Node
 
@@ -85,7 +85,29 @@ If it detects a difference, the controller takes action to make them match. For 
 - Scaling: If you decide to scale up or down, the reconciliation loop ensures that the actual number of running instances matches your specifications.
 - Updates & Rollbacks: When updating applications or configurations, Kubernetes gradually rolls out changes, ensuring that at any given time, the system is as close to the desired state as possible. If issues arise, it can automatically rollback to a previous state.
 
-The Control Plane, on the other hand, is responsible for maintaining the actual state of the cluster in alignment with the Desired State. It continuously monitors the cluster and makes necessary adjustments to bring the actual state closer to the user-defined Desired State.
+![Desired state](images/desired_state_diagram.PNG)
+
+**API version**
+
+The Kubernetes API version defines the structure of a primitive and uses it to validate the correctness of the data. The API version serves a similar purpose as XML schemas to an XML document or JSON schemas to a JSON document. The version usually undergoes a maturity process — e.g., from alpha to beta to final. Sometimes you see different prefixes separated by a slash (e.g., apps). You can list the API versions compatible with your cluster version by running the command `kubectl api-versions`.
+
+**Kind**
+
+The kind defines the type of primitive — e.g., a Pod or a Service. It ultimately answers the question, "What type of object are we dealing with here?"
+
+**Metadata**
+
+Metadata describes higher-level information about the object — e.g., its name, what namespace it lives in, or whether it defines labels and annotations. This section also defines the UID.
+
+**Spec**
+
+The specification ("spec" for short) declares the desired state — e.g., how should this object look after it has been created? Which image should run in the container, or which environment variables should be set for?
+
+**Status**
+
+The status describes the actual state of an object. The Kubernetes controllers and their reconciliation loops constantly try to transition a Kubernetes object from the desired state into the actual state. The object has not yet been materialized if the YAML status shows the value {}.
+
+So in conclusion, the Control Plane is responsible for maintaining the actual state of the cluster in alignment with the Desired State. It continuously monitors the cluster and makes necessary adjustments to bring the actual state closer to the user-defined Desired State.
 
 The interaction between the Desired State and the Control Plane ensures that resources are allocated, scaled, and managed efficiently, adhering to the defined configurations and maintaining system stability and reliability.
 
