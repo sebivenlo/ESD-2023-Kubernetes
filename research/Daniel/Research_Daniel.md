@@ -8,7 +8,7 @@ A Kubernetes cluster is a set of nodes that run containerized applications. Thes
 
 A Kubernetes cluster consists of one master node and several worker nodes, which can be either physical computers or virtual machines.
 
-![Kubernetes cluster diagram](images/cluster_diagram.PNG)
+![Kubernetes cluster diagram](../images/cluster_diagram.PNG)
 
 ### Master Node
 
@@ -85,7 +85,7 @@ If it detects a difference, the controller takes action to make them match. For 
 - Scaling: If you decide to scale up or down, the reconciliation loop ensures that the actual number of running instances matches your specifications.
 - Updates & Rollbacks: When updating applications or configurations, Kubernetes gradually rolls out changes, ensuring that at any given time, the system is as close to the desired state as possible. If issues arise, it can automatically rollback to a previous state.
 
-![Desired state](images/desired_state_diagram.PNG)
+![Desired state](../images/desired_state_diagram.PNG)
 
 **API version**
 
