@@ -72,7 +72,7 @@
     - Instead, the service will display a logical set of pods, but it will also play the part of a gateway. This means that you won’t have to keep track of pods that make up the service, as pods will be able to send requests to the service.
 - Source: https://www.clickittech.com/devops/kubernetes-architecture-diagram/
 ## Provide a high-level overview of Kubernetes architecture. 
-![Kubernetes Architecture Diagram](https://images.clickittech.com/2020/wp-content/uploads/2022/04/13202329/Diagram-55-1536x1288.jpg)
+![Kubernetes Architecture Diagram](images/architecture.jpg)
 Source: https://www.clickittech.com/devops/kubernetes-architecture-diagram/
 
 
