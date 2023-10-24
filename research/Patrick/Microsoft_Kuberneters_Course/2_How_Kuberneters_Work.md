@@ -8,15 +8,14 @@ This section explains all the components that make up a Kubernetes installation.
 
 A cluster is a set of computers configured to work together as a single system. The cluster uses centralized software responsible for scheduling and controlling tasks. Computers running tasks are called nodes, and those running scheduling software are called control planes.
 
-![ComputerCluster](../../images/computerCluster.png)
-
+![ComputerCluster](../../images/patrick/image_1.png)
 ## Architecture
 
 Kubernetes serves as the orchestration and cluster software to deploy apps and respond to changes in compute resource needs.
 
 A cluster contains at least one control plane and one or more nodes. The default host OS in Kubernetes is Linux.
 
-![Architecture](../../images/architecture_patrick.png)
+![Architecture](../../images/patrick/image_2.png)
 
 ## Kubernetes Control Plane
 
@@ -51,14 +50,18 @@ Kubernetes provides a command-line tool called `kubectl` to manage clusters. Use
 
 A pod represents a single instance of an app running in Kubernetes. Workloads in Kubernetes are containerized apps. Unlike in a Docker environment, containers are not run directly in Kubernetes; they are packaged into a pod. A pod is the smallest object you can create in Kubernetes.
 
+![Pods](../../images/patrick/image_3.png)
+
 A single pod can hold one or more containers, but it doesn't contain multiples of the same app.
 
-![Pods](../../images/pods_patrick.png)
+![Pods](../../images/patrick/image_4.png)
 
-### Example:
 
-Pod Lifecycle
+### Pod Lifecycle
 
 A pod has a distinct lifecycle that affects how you deploy, run, and update pods.
+
+![Image](../../images/patrick/image_5.png)
+![Image](../../images/patrick/image_6.png)
 
 Whenever a pod is deleted, it will be replaced by a new pod, unless the user explicitly specifies otherwise.
