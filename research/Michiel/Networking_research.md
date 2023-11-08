@@ -52,7 +52,7 @@ The `LoadBalancer` service type is used to expose a service externally using an 
 
 Each cloud provider typically has its own native load balancer implementation. When you create a `LoadBalancer` service, Kubernetes will automatically create and use the cloud provider's external load balancer to route traffic to the associated services, including NodePort and ClusterIP services.
 
-INSERT IMAGE
+![Image](../../images/michiel/load_balancer.png)
 
 *Image 1: Load balancer service type*
 
@@ -99,7 +99,7 @@ Now, you might wonder why having each pod with its own IP address is essential a
 
 For instance, consider a PostgreSQL container where inside the container, the Postgres application starts at port 5432. When starting containers directly on your machine, what you essentially do is bind your host port to the application port in the container.
 
-INSERT IMAGE
+![Image](../../images/michiel/bind_a_docker_container.png)
 
 *Image 2: Code to start and bind a docker container.*
 
@@ -107,7 +107,7 @@ In Image 2, you can see how we map or bind the port on the host to the port of t
 
 Now, let's imagine that we have a running PostgreSQL container. We can start another PostgreSQL container that will also run at the same port, but we bind it to a different port (See Image 3). This is the fundamental concept of how container port mapping works.
 
-INSERT IMAGE
+![Image](../../images/michiel/binded_to_a_different_port.png)
 
 *Image 3: Same port but it is binded to a different port.*
 
@@ -119,7 +119,7 @@ For instance, consider a pod running a Postgres container. When a pod is created
 
 In practice, this means that you can have, for example, seven microservices applications, each running on port 8080 inside seven different pods, and you won't encounter conflicts because they all operate on self-contained, isolated machines.
 
-INSERT IMAGE
+![Image](../../images/michiel/micro_services.png)
 
 *Image 4: 7 Micro services applications that all run on port 8080 inside 7 different pods.*
 
@@ -127,7 +127,7 @@ One valuable aspect of pod abstraction over individual containers is the flexibi
 
 However, there are scenarios where a pod may contain two or more containers. In such cases, you need to run a helper or side application alongside your main application. For instance, you might require synchronization between multiple database pods or periodic backups of the application, which would involve a backup side container within your application. Additional containers in a pod can serve various purposes, such as acting as a scheduler or an authentication gateway. There are many use cases where you may end up with more than one container inside a pod.
 
-INSERT IMAGE
+![Image](../../images/michiel/multiple_containers.png)
 
 *Image 5: Pod with multiple containers (Main - Helper)*
 
