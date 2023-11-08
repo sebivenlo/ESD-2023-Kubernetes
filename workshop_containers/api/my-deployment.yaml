@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment-esde
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-test-app  # Tis is to match the label with the Pod
+  template:
+    metadata:
+      labels:
+        app: my-test-app  # This is to match the label with the Pod
+    spec:
+      containers:
+      - name: esde-api
+        image: esde_api:latest
+        ports:
+        - containerPort: 80
