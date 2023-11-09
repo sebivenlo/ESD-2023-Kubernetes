@@ -16,4 +16,22 @@
 
 8: Execute `curl http://127.0.0.1:3000` or visit the browser @ `http://127.0.0.1:3000`
 
+9: Use Ctrl + C to break out of the port-forwarding loop
 
+10: Enable the metrics-server by running `minikube addons enable metrics-server`
+
+11. Create Horizontal Pod Autoscaler
+`kubectl autoscale deployment test-deployment-esde --cpu-percent=5 --min=1 --max=10`
+
+12. Check if HPA has been created
+`kubectl get hpa`
+
+13. To simulate load and trigger autoscaling, execute a loop of GET requests in a SEPARATE terminal
+`while ($true) { curl http://127.0.0.1:3000; }`
+
+14. Wait a few minutes for the metrics-server to collect the needed data, then you can again monitor the HPA with
+`kubectl get hpa`
+
+15. You should see the number of pods increase as the CPU load goes over 5%.
+
+16. To stop the load, interrupt the loop in the terminal by pressing Ctrl+C.
