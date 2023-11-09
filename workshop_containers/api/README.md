@@ -2,7 +2,9 @@
 
 2: Start MiniKube `minikube start`
 
-3: Point your Docker Deamon to the Minikube instance `eval $(minikube docker-env)`
+3: Point your Docker Deamon to the Minikube instance.
+ - Mac: `eval $(minikube docker-env)`
+ - Windows: `TBD`
 
 4: Build the Docker-image `docker build -t esde_api .`
 
