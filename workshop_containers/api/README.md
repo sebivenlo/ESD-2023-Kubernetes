@@ -31,8 +31,10 @@
 `kubectl get hpa`
 
 13.1: Again port-forward the Deployment `kubectl port-forward deployments/test-deployment-esde 3000:3000`
+
 13.2: To simulate load and trigger autoscaling, execute a loop of GET requests in a SEPARATE terminal
-`while ($true) { curl http://127.0.0.1:3000; }`
+   - Mac/Linux: `while true; do curl http://127.0.0.1:3000; done`
+   - Windows: `while ($true) { curl http://127.0.0.1:3000; }`
 
 14: Wait a few minutes for the metrics-server to collect the needed data, then you can again monitor the HPA with
 `kubectl get hpa`
