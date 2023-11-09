@@ -6,14 +6,15 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: my-test-app  # Tis is to match the label with the Pod
+      app: my-test-app
   template:
     metadata:
       labels:
-        app: my-test-app  # This is to match the label with the Pod
+        app: my-test-app
     spec:
       containers:
-      - name: esde-api
-        image: esde_api:latest
-        ports:
-        - containerPort: 80
+        - name: esde-api
+          image: esde_api:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 30
