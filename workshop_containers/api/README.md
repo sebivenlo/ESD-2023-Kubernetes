@@ -8,7 +8,7 @@
 
 4: Build the Docker-image `docker build -t esde_api .`
 
-5: Create Deployment `kubectl create -f ./my-deployment.yaml`
+5: Create Deployment `kubectl create -f ./my-deployment.yaml` (If already exists: `kubectl replace -f ./my-deployment.yaml`)
 
 6: Check if Deployment is running `kubectl get deployments`
 
