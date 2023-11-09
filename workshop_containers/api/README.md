@@ -1,6 +1,6 @@
 1: Start Docker
 
-2: Start MiniKube `minikube start`
+2: Start MiniKube `minikube start --driver=docker`
 
 3: Point your Docker Deamon to the Minikube instance.
  - Mac: `eval $(minikube docker-env)`
