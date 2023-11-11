@@ -1,23 +1,23 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
+apiVersion: apps/v1 # Which Kubernetes API version to use.
+kind: Deployment # Pod, Service, etc.
+metadata: # To identify deployment
   name: test-deployment-esde
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
+spec: # Start to spec(ify) the desired state.
+  replicas: 1 # How many instanes MUST be running
+  selector: # Specify how the deployment finds which pod to manage
+    matchLabels: # key-value pair that must match the label of the pod
       app: my-test-app
-  template:
-    metadata:
+  template: # Defines the POD template
+    metadata: # To identify pod
       labels:
         app: my-test-app
-    spec:
-      containers:
-        - name: esde-api
-          image: esde_api:latest
-          imagePullPolicy: Never
-          ports:
+    spec: # Start to specify the Pod container
+      containers: # An array of container specifications (in this case just 1)
+        - name: esde-api # Specify the name of the container to use
+          image: esde_api:latest # Which image to use
+          imagePullPolicy: Never # Do NOT pull from Dockerhub but from local
+          ports: # Specify to which port the container will listen on
             - containerPort: 30
-          resources:
-            requests:
-              cpu: "100m"
+          resources: # Defines the resources available to the container
+            requests: # Minimum amount of compute resources required
+              cpu: "100m" # 1/10th of a CPU core
